@@ -1,0 +1,16 @@
+html, body, * {
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    border:none;
+}
+
+.fs-bigger{
+    font-size: x-large;
+}
+
+.no-resize{
+    resize: none;
+}

@@ -3,18 +3,17 @@ var element = document.getElementById("bloggs");
 
 function Submit(){
     var post = new Object();
-    var title = document.getElementById("title").value;
-    var text = document.getElementById("text").value;
-    post.Title = title;
-    post.Text = text;
+    var title = document.getElementById("title");
+    var text = document.getElementById("text");
+    post.Title = title.value;
+    post.Text = text.value;
     posts.push(post);
-    ClearValues(title,text);
     console.log(posts);
-    AddPost(title, text);
+    AddPost(post.Title, post.Text);
+    ClearValues(title,text);
 }
 
 function AddPost(title, text){
-    alert
     var article = document.createElement("article");
     var h3 = document.createElement("h3");
     var p = document.createElement("p");
