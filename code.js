@@ -18,16 +18,38 @@ var nums = "";
             var article = document.createElement("article");
             var h3 = document.createElement("h3");
             var p = document.createElement("p");
+            var button = document.createElement("button");
+                button.onclick = function (){
+                    var title = posts[i].childNodes[1].innerHTML;
+                    var text = posts[i].childNodes[2].innerHTML;
+                    var element = this.parentElement;
+                    var editbtn = document.createElement("button");
+                    editbtn.innerText = "Save";
+                    var editTitle = document.createElement("input");
+                    editTitle.type = "text";
+                    editTitle.value = title;
+                    editTitle.className = "col-12";
+                    var editText = document.createElement("textarea");
+                    editText.value = text;
+                    editText.className = "col-12 no-resize height";
+                    element.innerHTML = "";
+                    element.append(editbtn, editTitle, editText);
+                };
             h3.innerText = "Lorem ipsum, dolor sit";
             p.innerText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam repudiandae quae fugit dolores placeat suscipit similique, rem sequi deleniti totam quidem doloremque autem. Eligendi maxime quod quas, laudantium esse minus!Impedit obcaecati eveniet ducimus vitae nobis minus dolorum voluptates deserunt amet eos, placeat, nulla deleniti magni, velit veniam aliquid. Rem id optio nam dicta aperiam quos consequuntur neque atque voluptatibus?";
-            article.append(h3, p);
+            article.append(button, h3, p);
             article.className = "w-50 m-auto mt-3 mb-5 bg-dark text-light p-4 rounded";
+            article.id=i;
             posts.push(article);
         }
-            
             console.log(posts);
+        function Edit(id){
+            var post = document.getElementById(id);
+            console.log(id);
+        }
 
         function AddPost(amount){
+            document.getElementById("bloggs").innerHTML = "";
             for (i = 0; i < amount; i++){
                 var element = document.getElementById("bloggs");
                 element.appendChild(posts[i]);

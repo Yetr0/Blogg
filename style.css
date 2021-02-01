@@ -7,6 +7,10 @@ input{
     border:none;
 }
 
+.height{
+    height: 200px;
+}
+
 .fs-bigger{
     font-size: x-large;
 }
